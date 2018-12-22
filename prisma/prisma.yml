@@ -1,0 +1,10 @@
+endpoint: https://eu1.prisma.sh/vladislavvorobyev12-6d2bf5/android_DIT_api/dev
+datamodel: datamodel.prisma
+
+generate:
+  - generator: javascript-client
+    output: ./generated/prisma-client/
+
+hooks:
+  post-deploy:
+    - graphql get-schema -p prisma
